@@ -5,13 +5,13 @@ date:   2024-04-13 21:00:00 +0100
 ---
 
 
-I have recently been using [Detectron2](https://github.com/facebookresearch/detectron2) to train deep learning models for object detection and instance segmentation. This works great, but I found that there is one area in which Detectron2 is lacking: data augmentation. Although it has a decent [API](https://detectron2.readthedocs.io/en/latest/modules/data_transforms.html) for data transforms, it has a limited selection of useful data augmentations. Normally, a dedicated data augmentation library such as [Albumentations](https://github.com/albumentations-team/albumentations) would be my first choice for this. Unfortunately, Detectron2 does not have any integration with Albumentations, unlike similar libraries such as [mmdetection](https://github.com/open-mmlab/mmdetection/pull/1354). 
+I have recently been using [Detectron2](https://github.com/facebookresearch/detectron2) to train deep learning models for object detection and instance segmentation. This works great, but I found that there is one area in which Detectron2 is lacking: data augmentation. Although it has a decent [API](https://detectron2.readthedocs.io/en/latest/modules/data_transforms.html) for data transforms, it has a limited selection of useful data augmentations. Normally, a dedicated data augmentation library such as [Albumentations](https://github.com/albumentations-team/albumentations) would be my first choice for this. Unfortunately, unlike similar libraries such as [mmdetection](https://github.com/open-mmlab/mmdetection/pull/1354), Detectron2 does not have any built-in integration with Albumentations.
 
 So instead, I started looking for custom ways to integrate Albumentations into Detectron2. Since Detectron2 already has its own data transforms API, I expected integration with Albumentations to be relatively straightforward. However, it turned out to be a little more complicated than I expected. Therefore, I'm sharing my findings here in case they are useful to anyone else.
 
 ## The goal: Albumentations wrapper in Detectron2
 
-Because Detectron2 also has some useful data transformations, I would ideally like the option to use both the Detectron2 transforms API as well as the Albumentations API. It should be possible to integrate this into a standard Detectron2 pipeline. Here's what it should look like:
+Because Detectron2 has some useful data transformations, the goal here is to use the Detectron2 transforms API as well as the Albumentations API in the same pipeline. It should be possible to integrate this into a standard Detectron2 pipeline. Here's what it should look like:
 
 ```python
 import detectron2.data.transforms as T
@@ -90,15 +90,15 @@ At a high level, this code shows that data transformations are applied in two pl
 - Line [163-165](https://github.com/facebookresearch/detectron2/blob/b7c7f4ba82192ff06f2bbb162b9f67b00ea55867/detectron2/data/dataset_mapper.py#L163): image-level annotations (image + semantic segmentation mask)
 - Line [188-189](https://github.com/facebookresearch/detectron2/blob/b7c7f4ba82192ff06f2bbb162b9f67b00ea55867/detectron2/data/dataset_mapper.py#L188): instance annotations (bounding boxes + instance segmentations)
 
-In both these places, the same `transforms` variable is used to transform the data. Now consider the following: The data transforms need to be applied in the same way (i.e. deterministically) in order for the image and its annotations to stay consistent with each other. For example, when using a random rotation transform, if the image was rotated by 15 degrees, but the bounding boxes were rotated by 25 degrees, then clearly this would lead to inconsistency between the image and the bounding boxes. Therefore, `transforms` needs to lead to the same result each time it is applied.
+In both these places, the same `transforms` variable is used to transform the data. Now consider the following: The data transforms need to be applied in the same way (i.e. deterministically) in order for the image and its annotations to maintain consistency. For example, when using a random rotation transform, if the image was rotated by 15 degrees, but the bounding boxes were rotated by 25 degrees, then clearly this would lead to inconsistency between the image and the bounding boxes. Instead, the image and bounding boxes need to be rotated by the same amount to maintain alignment. Therefore, `transforms` needs to lead to the same result each time it is applied.
 
-Determinism also comes with drawbacks. Clearly, it is not ideal to use only deterministic transforms in a deep learning pipeline. As any deep learning practitioner knows, data augmentation is useful because it can transform data in _random_ ways, to increase the diversity of the dataset. For example, for a single image, you can randomly vary the brightness level, to make your model better at handling various brightness ranges. 
+Determinism also comes with drawbacks. In many cases, it is not ideal to use only deterministic transforms in a deep learning pipeline. Data augmentation is a powerful tool because it can transform data in _random_ ways, to increase the diversity of the dataset. For example, for a single image, you can randomly vary the brightness level, to make your model better at handling various brightness ranges. This is particularly useful for smaller datasets, but can just as easily help build [state-of-the-art models](https://ai.meta.com/blog/advancing-computer-vision-research-with-new-detectron2-mask-r-cnn-baselines/).
 
-Detectron2 addresses this by defining the `Augmentation` class. Basically, this class constructs a `Transform` class instance, in a non-deterministic way. Specifically, by calling `Augmentation.get_transform()`, a new `Transform` instance is created with randomly sampled parameters. If we look back at the `DatasetMapper.__call__` definition shown above, where augmentations are applied in two separate places, the following procedure is applied under the hood: First, call `Augmentation.get_transform()` once at the beginning of the function to randomly sample a new `Transform` instance. Then, apply this transform deterministically to all input data.
+Detectron2 addresses the need for random augmentations by defining the `Augmentation` class. Basically, this class constructs a `Transform` class instance, in a non-deterministic way. Specifically, by calling `Augmentation.get_transform()`, a new `Transform` instance is created with randomly sampled parameters. If we look back at the `DatasetMapper.__call__` definition shown above, where augmentations are applied in two separate places, the following procedure is applied under the hood: First, call `Augmentation.get_transform()` once at the beginning of the function to randomly sample a new `Transform` instance. Then, apply this transform deterministically to all input data.
 
 ## Albumentations: Slightly different
 
-On the other hand, the Albumentations API generally applies transforms in a fully non-deterministic way. Unlike Detectron2, there is no intermediate abstraction which is used for applying transforms in a deterministic way. For example, every time you call `A.RandomCrop`, you will get a different crop. This works because the transformations are all applied in a single call. Consider the following standard Albumentations workflow:
+On the other hand, the default Albumentations API applies transforms in a fully non-deterministic way, where the transformations are randomly applied each time they are called. Unlike Detectron2, there is no intermediate abstraction which is used for applying transforms in a deterministic way. For example, every time you call `A.RandomCrop`, you will get a different crop. This works because the transformations are all applied in a single call. Consider the following standard Albumentations workflow:
 
 ```python
 import albumentations as A
@@ -114,13 +114,7 @@ bboxes = ...  # bounding boxes here
 transformed = transform(image=image, bboxes=bboxes)
 ```
 
-Even though calling `transform` here is non-deterministic (you get a different result every time you call it), this still works correctly because all data is passed to the transform at the same time. This means all data (in this case, the image and bounding boxes) will be transformed in a way that is consistent with each other. Note that this means it is expected of the user to call `transform` only once for a single image and its annotations. For example, this would not work:
-
-```python
-# This does not work: The transform is applied with different random parameters each time it is called.
-transformed1 = transform(image=image)
-transformed2 = transform(bboxes=bboxes)
-```
+Even though calling `transform` here is non-deterministic (you get a different result every time you call it), this still works correctly because all data is passed to the transform at the same time. This means all data (in this case, the image and bounding boxes) will be transformed in a way that maintains alignment between them. Note that this means it is expected of the user to call `transform` only once for a single image and its annotations. Applying the transform separately to the image and bounding boxes would lead to inconsistencies, since the random parameters would be different each time.
 
 ## Putting the pieces together
 
@@ -171,12 +165,10 @@ class Albumentations(T.Augmentation):
         return params
 ```
 
-Note that `get_transform()` returns a deterministic transform, using randomly sampled parameters by calling `prepare_params`. The `AlbumentationsTransform` class is omitted here for brevity. In short, it takes the Albumentations transform along with the parameters passed to it and applies the transform in a deterministic way. The source can be found [here](https://github.com/tobiasvanderwerff/detectron2/blob/db82d1ae8dbe8fe1d47e851ea1730af6eded849b/detectron2/data/transforms/augmentation_impl.py#L740).
+The key idea is that `get_transform()` returns a deterministic transform, using randomly sampled parameters obtained by calling `prepare_params()`. The `AlbumentationsTransform` class takes the Albumentations transform along with the parameters and applies the transform deterministically. The full source code for `AlbumentationTransform` can be found [here](https://github.com/tobiasvanderwerff/detectron2/blob/db82d1ae8dbe8fe1d47e851ea1730af6eded849b/detectron2/data/transforms/augmentation_impl.py#L740).
 
 By using this wrapper class, we can now define Albumentations transforms as part of our regular Detectron2 pipeline, as shown in the [beginning of this post](#the-goal-albumentations-wrapper-in-detectron2).
 
-
-<!-- A point of attention is to use the input format expected by `albumentations`. However, `detectron2` will convert bounding boxes to XYXY_ABS format before augmenting them. -->
 
 ## Limitations
 
@@ -196,6 +188,6 @@ pip install 'git+https://github.com/tobiasvanderwerff/detectron2.git'
 
 Alternatively, you could also copy the `Albumentations` and `AlbumentationsTransform` classes as defined [here](https://github.com/tobiasvanderwerff/detectron2/blob/db82d1ae8dbe8fe1d47e851ea1730af6eded849b/detectron2/data/transforms/augmentation_impl.py#L740) and [here](https://github.com/tobiasvanderwerff/detectron2/blob/eae825324d2beeb6ed546fde04b1bbe9a17d40ca/detectron2/data/transforms/transform.py#L308) to your own project.
 
-I've made a [pull
-request](https://github.com/facebookresearch/detectron2/pull/5253#issue-2234148912) for the changes to be integrated into Detectron2, but given the recent lack of activity by maintainers, I am not sure if it will get merged. 
+I've made a [pull request](https://github.com/facebookresearch/detectron2/pull/5253#issue-2234148912) for the changes to be integrated into Detectron2, but given the recent lack of activity by maintainers, it is unclear if or when it might get merged.
 
+In summary, by leveraging the `get_params()` functionality in Albumentations to enable deterministic transforms, we can create a custom wrapper that allows using Albumentations within the Detectron2 augmentations API. This enables leveraging Albumentations' wide array of augmentations to improve model performance.
