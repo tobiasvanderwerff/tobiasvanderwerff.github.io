@@ -194,7 +194,7 @@ If you want to use this implementation: I forked Detectron2 and added my changes
 pip install 'git+https://github.com/tobiasvanderwerff/detectron2.git'
 ```
 
-Alternatively, you could also copy the `Albumentations` and `AlbumentationsTransform` classes as defined [here](https://github.com/tobiasvanderwerff/detectron2/blob/db82d1ae8dbe8fe1d47e851ea1730af6eded849b/detectron2/data/transforms/augmentation_impl.py#L740) and [here](https://github.com/tobiasvanderwerff/detectron2/blob/db82d1ae8dbe8fe1d47e851ea1730af6eded849b/detectron2/data/transforms/augmentation_impl.py#L740) to your own project. 
+Alternatively, you could also copy the `Albumentations` and `AlbumentationsTransform` classes as defined [here](https://github.com/tobiasvanderwerff/detectron2/blob/db82d1ae8dbe8fe1d47e851ea1730af6eded849b/detectron2/data/transforms/augmentation_impl.py#L740) and [here](https://github.com/tobiasvanderwerff/detectron2/blob/eae825324d2beeb6ed546fde04b1bbe9a17d40ca/detectron2/data/transforms/transform.py#L308) to your own project.
 
 I've made a [pull
 request](https://github.com/facebookresearch/detectron2/pull/5253#issue-2234148912) for the changes to be integrated into Detectron2, but given the recent lack of activity by maintainers, I am not sure if it will get merged. 
