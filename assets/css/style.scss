@@ -1,0 +1,12 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+// Make the middle footer column a bit wider on the left to fit the github name on a single line
+.footer-col-1 {
+    width: calc(30% - (30px / 2));  // prev: 35%
+}
+.footer-col-2 {
+    width: calc(25% - (30px / 2));  // prev: 20%
+}
