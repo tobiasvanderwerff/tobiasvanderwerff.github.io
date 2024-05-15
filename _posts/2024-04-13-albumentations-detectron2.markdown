@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Using Albumentations in Detectron2"
-date:   2024-04-13 21:00:00 +0100
 ---
 
 
