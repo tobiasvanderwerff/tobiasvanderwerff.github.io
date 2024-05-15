@@ -186,5 +186,5 @@ Finally, I have omitted a more in-depth discussion on applying ViT for dense pre
 [15] Shao et al. ["On the Adversarial Robustness of Vision Transformers"](https://arxiv.org/abs/2103.15670), 2021.  
 [16] Zhang et al. ["Delving Deep into the Generalization of Vision Transformers under Distribution Shifts"](https://arxiv.org/pdf/2106.07617), 2021.  
 [17] Bai et al. ["Are Transformers More Robust Than CNNs?"](https://arxiv.org/abs/2111.05464), 2021.  
-[18] Liu et al. ["A ConvNet for the 2020s"](https://arxiv.org/abs/2201.03545), 2022.
+[18] Liu et al. ["A ConvNet for the 2020s"](https://arxiv.org/abs/2201.03545), 2022.  
 [19] Pinto et al. ["An Impartial Take to the CNN vs Transformer Robustness Contest"](https://arxiv.org/abs/2207.11347), 2022.  
