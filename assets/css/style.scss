@@ -10,3 +10,17 @@
 .footer-col-2 {
     width: calc(25% - (30px / 2));  // prev: 20%
 }
+
+img.center {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+figcaption {
+  text-align: center;
+  width: 75%;
+  margin: 10px auto 35px;
+  line-height: 1.35;
+  color: #888;
+  font-size: 15px;
+}

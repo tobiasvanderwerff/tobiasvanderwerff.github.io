@@ -1,0 +1,131 @@
+<mxfile host="app.diagrams.net" modified="2024-05-15T15:31:53.646Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="xx7Fi2hnSntqeXVov-1g" version="24.4.0" type="device">
+  <diagram name="Page-1" id="10a91c8b-09ff-31b1-d368-03940ed4cc9e">
+    <mxGraphModel dx="1367" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="62893188c0fa7362-1" value="Are you training on a very large dataset (10M+ images?)" style="whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="280" y="60" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="62893188c0fa7362-4" value="No" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="62893188c0fa7362-1" target="KJ6yOaFOZszPi2Id7SwO-2" edge="1">
+          <mxGeometry x="0.8235" y="16" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="407.5" y="150" as="sourcePoint" />
+            <mxPoint x="458.46153846153857" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="62893188c0fa7362-5" value="Yes" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="62893188c0fa7362-1" target="KJ6yOaFOZszPi2Id7SwO-1" edge="1">
+          <mxGeometry x="0.599" y="-17" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="205" y="180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="62893188c0fa7362-10" value="CNN" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="310" y="295" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="62893188c0fa7362-16" value="Yes" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12" parent="1" target="62893188c0fa7362-10" edge="1">
+          <mxGeometry x="0.5561" y="-13" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="475.4545454545455" y="255" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-1" value="ViT" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#ffcc99;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="160" y="180" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-2" value="Is model efficiency important to you? E&lt;span style=&quot;background-color: initial;&quot;&gt;.g., for a real-time or embedded application.&lt;/span&gt;" style="whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="400" y="175" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-6" value="No" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="KJ6yOaFOZszPi2Id7SwO-8" target="KJ6yOaFOZszPi2Id7SwO-11" edge="1">
+          <mxGeometry x="0.0896" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="730.002727272727" y="415" as="sourcePoint" />
+            <mxPoint x="775.4572727272725" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-8" value="Is there a model checkpoint you can initialize from which is pretrained on 10M+ images?" style="whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="520" y="290" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-9" value="Yes" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" parent="1" source="KJ6yOaFOZszPi2Id7SwO-8" target="KJ6yOaFOZszPi2Id7SwO-12" edge="1">
+          <mxGeometry x="0.5" y="-23" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="610.0045454545455" y="415" as="sourcePoint" />
+            <mxPoint x="559.55" y="465" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-10" value="No" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.25;entryY=0;entryDx=0;entryDy=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;" parent="1" source="KJ6yOaFOZszPi2Id7SwO-2" target="KJ6yOaFOZszPi2Id7SwO-8" edge="1">
+          <mxGeometry x="0.8552" y="16" relative="1" as="geometry">
+            <mxPoint x="1" as="offset" />
+            <mxPoint x="527.5" y="260" as="sourcePoint" />
+            <mxPoint x="625.4572727272725" y="305" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-11" value="CNN" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="650" y="420" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-12" value="Is your target data very different from the pretraining data? (e.g., medical images)" style="whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="400" y="410" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-13" value="Yes" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="KJ6yOaFOZszPi2Id7SwO-12" target="UWUhjkG9kWp9S7fFH5VX-1" edge="1">
+          <mxGeometry x="0.1743" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="455.4545454545455" y="585" as="sourcePoint" />
+            <mxPoint x="402.5" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KJ6yOaFOZszPi2Id7SwO-15" value="No" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UWUhjkG9kWp9S7fFH5VX-2" target="xSYe2EdWS3wrfwVNt2mq-5" edge="1">
+          <mxGeometry x="0.0896" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="890" y="775" as="sourcePoint" />
+            <mxPoint x="807.5" y="780" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UWUhjkG9kWp9S7fFH5VX-1" value="Start with ViT; try CNN if there is time&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#ffcc99;strokeColor=#36393d;gradientDirection=east;glass=0;gradientColor=#CCE5FF;" parent="1" vertex="1">
+          <mxGeometry x="290" y="535" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="UWUhjkG9kWp9S7fFH5VX-2" value="Are you in a hurry and want to&amp;nbsp;&lt;div&gt;get to a solution as quickly as possible?&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#f9f7ed;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="630" y="655" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="UWUhjkG9kWp9S7fFH5VX-3" value="Yes" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="UWUhjkG9kWp9S7fFH5VX-2" target="UWUhjkG9kWp9S7fFH5VX-5" edge="1">
+          <mxGeometry x="0.1743" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="665.4545454545455" y="940" as="sourcePoint" />
+            <mxPoint x="613" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UWUhjkG9kWp9S7fFH5VX-4" value="No" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" target="UWUhjkG9kWp9S7fFH5VX-2" edge="1">
+          <mxGeometry x="0.0896" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="627.5" y="615" as="sourcePoint" />
+            <mxPoint x="720.5" y="655" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UWUhjkG9kWp9S7fFH5VX-5" value="CNN" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#cce5ff;strokeColor=#36393d;" parent="1" vertex="1">
+          <mxGeometry x="520" y="780" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="xSYe2EdWS3wrfwVNt2mq-1" value="At deployment time, is data&lt;div&gt;drift likely?&lt;/div&gt;" style="whiteSpace=wrap;html=1;rounded=1;shadow=1;labelBackgroundColor=none;strokeWidth=1;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#f9f7ed;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="520" y="530" width="170" height="85" as="geometry" />
+        </mxCell>
+        <mxCell id="xSYe2EdWS3wrfwVNt2mq-2" value="Yes" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;entryX=0.75;entryY=0;entryDx=0;entryDy=0;exitX=0.25;exitY=1;exitDx=0;exitDy=0;" edge="1" target="xSYe2EdWS3wrfwVNt2mq-3" parent="1" source="xSYe2EdWS3wrfwVNt2mq-1">
+          <mxGeometry x="0.3293" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="745" y="625" as="targetPoint" />
+            <mxPoint x="854" y="590" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xSYe2EdWS3wrfwVNt2mq-3" value="ViT" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#ffcc99;strokeColor=#36393d;" vertex="1" parent="1">
+          <mxGeometry x="410" y="660" width="150" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="xSYe2EdWS3wrfwVNt2mq-4" value="No" style="rounded=0;html=1;labelBackgroundColor=none;startArrow=none;startFill=0;startSize=5;endArrow=none;endFill=0;endSize=5;jettySize=auto;orthogonalLoop=1;strokeWidth=1;fontFamily=Verdana;fontSize=12;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="KJ6yOaFOZszPi2Id7SwO-12" target="xSYe2EdWS3wrfwVNt2mq-1">
+          <mxGeometry x="0.0896" y="11" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <mxPoint x="540" y="500" as="sourcePoint" />
+            <mxPoint x="585.5" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="xSYe2EdWS3wrfwVNt2mq-5" value="Start with ViT; try CNN if there is time&amp;nbsp;" style="whiteSpace=wrap;html=1;rounded=0;shadow=1;labelBackgroundColor=none;strokeWidth=2;fontFamily=Verdana;fontSize=12;align=center;aspect=fixed;fillColor=#ffcc99;strokeColor=#36393d;gradientDirection=east;glass=0;gradientColor=#CCE5FF;" vertex="1" parent="1">
+          <mxGeometry x="760" y="780" width="150" height="75" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
