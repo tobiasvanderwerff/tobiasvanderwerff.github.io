@@ -40,6 +40,11 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# Page links to show in the top right of the header
+header_pages:
+  - about.md
+  - tags.md
+
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to

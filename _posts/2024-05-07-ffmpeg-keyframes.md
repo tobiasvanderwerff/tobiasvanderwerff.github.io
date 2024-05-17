@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Extracting High-Quality Keyframes from Videos Using FFmpeg"
-tags: Tutorial FFmpeg
+tags: tutorial
 ---
 
 I recently found out that when extracting individual frames from a video, not all frames are of the same quality. This is because [temporal compression](https://en.wikipedia.org/wiki/Video_compression_picture_types) is employed to store videos in a more efficient way, without needing to store each individual frame in its full size. It exploits the similarities between neighboring frames to reduce the amount of data needed to store the video. This can lead to artifacts such as blurriness when frames are extracted as individual images.
