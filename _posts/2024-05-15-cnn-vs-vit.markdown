@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "CNN vs. Vision Transformer: A Practitioner's Guide to Selecting the Right Model"
+title: "CNN vs. Vision Transformer: A Practitioner's Guide to Selecting the Right Model"
+tags: AI Long-read
 ---
 
 ## Introduction

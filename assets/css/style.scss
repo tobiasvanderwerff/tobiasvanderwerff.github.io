@@ -24,3 +24,31 @@ figcaption {
   color: #888;
   font-size: 15px;
 }
+
+.tag-list {
+  list-style-type: none; /* Remove default bullet points */
+  display: flex; /* Display the list items horizontally */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+.tag-list li {
+  background-color: #f2f2f2; /* Light grey background */
+  color: #888; /* Light gray text color */
+  margin-right: 10px; /* Add some space between the list items */
+  border: 1px solid #dcdcdc; /* Light grey border */
+  border-radius: 8px; /* Rounded corners */
+  // box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  // cursor: default; /* Default cursor to indicate non-interactive */
+  // transition: background-color 0.3s ease;
+}
+.tag-list li:hover {
+  background-color: #d9d9d9; /* Darker gray */
+}
+.tag-list a {
+  text-decoration: none; /* Remove the underline from the link */
+  display: block; /* Makes the anchor fill the li */
+  color: #888; /* Light gray text color */
+  padding: 5px 15px; /* Top/bottom and left/right padding */
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
