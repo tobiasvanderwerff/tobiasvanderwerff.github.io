@@ -3,12 +3,25 @@
 
 @import "{{ site.theme }}";
 
+body {
+  font-family: Perpetua, Baskerville, "Big Caslon", "Palatino Linotype", Palatino, "URW Palladio L", "Nimbus Roman No9 L", serif;
+  font-size: 17px;
+}
+
+h1, h2, h3 {
+  font-family: "Perpetua Titling MT", serif;
+}
+
+code {
+  font-family: "Courier New", Courier, monospace;
+}
+
 // Make the middle footer column a bit wider on the left to fit the github name on a single line
 .footer-col-1 {
-    width: calc(30% - (30px / 2));  // prev: 35%
+  width: calc(30% - (30px / 2));  // prev: 35%
 }
 .footer-col-2 {
-    width: calc(25% - (30px / 2));  // prev: 20%
+  width: calc(25% - (30px / 2));  // prev: 20%
 }
 
 img.center {
