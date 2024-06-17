@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Knowledge worth learning"
+title: "Knowledge Worth Learning"
 tags: essay
 ---
 
