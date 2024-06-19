@@ -79,6 +79,12 @@ Have you ever found yourself learning something that seemed useless at first but
 	> 1 iteratively take on concrete projects and accomplish them depth wise, learning “on demand” (ie don’t learn bottom up breadth wise)  
 	> 2 teach/summarize everything you learn in your own words  
 	> 3 only compare yourself to younger you, never to others
+- [Andrej Karpathy on the shortification of learning](https://x.com/karpathy/status/1756380066580455557):
+    > There are a lot of videos on YouTube/TikTok etc. that give the appearance of education, but if you look closely they are really just entertainment. This is very convenient for everyone involved : the people watching enjoy thinking they are learning (but actually they are just having fun). The people creating this content also enjoy it because fun has a much larger audience, fame and revenue. But as far as learning goes, this is a trap. This content is an epsilon away from watching the Bachelorette. It's like snacking on those "Garden Veggie Straws", which feel like you're eating healthy vegetables until you look at the ingredients.  
+    >
+    > Learning is not supposed to be fun. It doesn't have to be actively not fun either, but the primary feeling should be that of effort. It should look a lot less like that "10 minute full body" workout from your local digital media creator and a lot more like a serious session at the gym. You want the mental equivalent of sweating. It's not that the quickie doesn't do anything, it's just that it is wildly suboptimal if you actually care to learn.  
+    > ...  
+    > So for those who actually want to learn. Unless you are trying to learn something narrow and specific, close those tabs with quick blog posts. Close those tabs of "Learn XYZ in 10 minutes". Consider the opportunity cost of snacking and seek the meal - the textbooks, docs, papers, manuals, longform. Allocate a 4 hour window. Don't just read, take notes, re-read, re-phrase, process, manipulate, learn. 
 - [Gian Segato: Learning takes effort, otherwise it's just entertainment](https://giansegato.com/essays/edutainment-is-not-learning)
 - [Ben Kuhn on exploring new things](https://www.benkuhn.net/exploration/)
 
