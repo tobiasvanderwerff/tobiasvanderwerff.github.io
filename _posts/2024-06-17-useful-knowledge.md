@@ -62,8 +62,6 @@ Frankly, I still find it quite difficult to determine what information is worth 
 
 I find inspiration in the people I look up to when I consider their approach to learning. For example, my impression is that the most impressive software engineers tend to share a learning mindset. They strive to understand systems *deeply* rather than superficially. A learning mindset might just be the most important meta-strategy: Make it a habit to expand your knowledge and skills, striving for deep, non-superficial understanding. As long as you keep learning, you'll learn useful knowledge along the way.
 
-Have you ever found yourself learning something that seemed useless at first but turned out to be valuable later? I'd love to hear your experiences in the comments below.
-
 [^1]: One of my favorite examples of this is Andrej Karpathy [making the connection between LLMs and operating systems](https://x.com/karpathy/status/1707437820045062561) -- two things which, at first glance, have little to do with each other.
 
 
