@@ -6,7 +6,7 @@ permalink: /about/
 
 Greetings and welcome. I'm Tobias van der Werff, and this is a place for me to share things I've learned or find interesting.
 
-In my day-to-day life, I am a software engineer working on AI, currently focusing primarily on computer vision. I love implementing cutting-edge AI research and applying it to real-world problems.  
+In my day-to-day life, I am a software engineer working on AI in The Netherlands, currently focusing primarily on computer vision. I love implementing cutting-edge AI research and applying it to real-world problems.  
 
 If you want to get in touch, feel free to [email me](mailto:tvdw@fastmail.com).
 
