@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Using Albumentations in Detectron2"
-tags: tutorial python
+tags: tutorial python programming
 ---
 
 

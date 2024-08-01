@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Knowledge Worth Learning"
-tags: essay
+tags: essay programming
 ---
 
 What makes someone motivated to learn new things? In my opinion, trying to answer this question is crucial to success in a knowledge economy. Most people have a learning style which is unique to them. For example, I consider myself a highly pragmatic person. I like to remind myself of this from time to time because it helps me to ground my thinking and better understand my motivations and drives. I see learning new things as something that is highly *practical*, akin to an investment in myself that leads to a positive return in the future.
