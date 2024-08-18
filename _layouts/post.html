@@ -10,6 +10,10 @@ layout: base
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {{ page.date | date: date_format }}
       </time>
+      {%- assign word_count = content | number_of_words -%}
+      • {{ word_count | append: " words "}}
+      {%- assign reading_time = word_count | divided_by: 200 -%}
+      • {{ reading_time | append: " min read "}}
       {%- if page.modified_date -%}
         ~ 
         {%- assign mdate = page.modified_date | date_to_xmlschema -%}
