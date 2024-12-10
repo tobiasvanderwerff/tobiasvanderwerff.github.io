@@ -57,6 +57,10 @@ Working with LLMs is like working with alien technology -- there's no manual for
 
 LLMs have helped me regain some of the sense of wonder I used to have as a kid when I pestered my mother with random questions about the universe. Learning doesn't have to be boring, and LLMs are making this abundantly clear. We are truly at the beginning of a new age of curiosity, and I'm looking forward to all the incredible applications that AI will make possible.
 
+## Related reading
+
+- [Tyler Cowen: How to read a book using o1](https://marginalrevolution.com/marginalrevolution/2024/12/how-to-read-a-book-using-o1.html)
+
 
 ---
 <br>
