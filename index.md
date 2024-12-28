@@ -1,6 +1,5 @@
 ---
 layout: page
-title: About
 ---
 
 Greetings. I'm Tobias van der Werff, and this is a place for me to share things I've learned or find interesting.
