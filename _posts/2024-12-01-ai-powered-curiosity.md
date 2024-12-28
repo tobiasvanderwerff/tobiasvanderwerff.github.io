@@ -14,7 +14,7 @@ But the magical technology I dreamt of as a kid actually exists in the world we 
 
 What I envisioned then exists today in the form of large language models -- extremely large neural networks trained on massive amounts of internet data. This training has given these models vast knowledge of the world. To the degree that information can be found on the internet, LLMs have memorized it. The addition of RLHF (Reinforcement Learning from Human Feedback) has made interaction with these models as accessible as having a conversation with another person. The result is nothing short of spectacular, and I believe the world has yet to realize the true potential of this technology.
 
-One of my favorite use cases for LLMs in day-to-day life is to use them as a tool for exploration and curiosity-based research. This can be for the purpose of [solving a concrete problem](https://tobiasvanderwerff.github.io/2024/06/17/useful-knowledge.html), or just being curious about how things work and wanting to dive deeper. For instance, I recently found myself wondering about several questions:
+One of my favorite use cases for LLMs in day-to-day life is to use them as a tool for exploration and curiosity-based research. This can be for the purpose of [solving a concrete problem](/2024/06/17/useful-knowledge.html), or just being curious about how things work and wanting to dive deeper. For instance, I recently found myself wondering about several questions:
 
 - "Why does money become worth less over time?"
 - "What makes kerosone suitable for airplane fuel?"
