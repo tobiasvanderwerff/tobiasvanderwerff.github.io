@@ -8,7 +8,7 @@ I'm Tobias van der Werff, an AI engineer based in The Netherlands.
 
 You can find my blog [here](/blog/), where I write about topics such as AI, programming, and more. I'd describe it as a mix of contemplative essays and technical tutorials, with a focus on [practical insights](/2024/06/17/useful-knowledge.html).
 
-You can also find me on [Github](https://github.com/tobiasvanderwerff) and [X](https://www.twitter.com/tobiasnvdw).
+You can also find me on [Github](https://github.com/tobiasvanderwerff) and [X](https://www.x.com/tobiasnvdw).
 
 I occasionally do consulting, providing advice and implementation for real-world AI applications. Here are some areas in which I have expertise:
 
