@@ -17,4 +17,4 @@ I occasionally do consulting, providing advice and implementation for real-world
 - Building, training, and deploying deep learning models
 - Systems-level optimization of neural networks to make them run faster, e.g. using CUDA C++
  
-If you want to get in touch, feel free to [email me](mailto:tvdw@fastmail.com).
+If you want to get in touch, feel free to [email me](mailto:t@tobiasvanderwerff.com).
