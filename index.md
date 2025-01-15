@@ -12,6 +12,7 @@ You can also find me on [Github](https://github.com/tobiasvanderwerff) and [X](h
 
 I occasionally do consulting, providing advice and implementation for real-world AI applications. Here are some areas in which I have expertise:
 
+- Front-end LLM applications, e.g. AI agents on top of [company knowledge bases](https://www.linkedin.com/pulse/klaar-voor-de-toekomst-ai-integratie-bij-nu-swift-van-der-werff-tt8mc/?trackingId=5CJhhg%2BZSTS50ekWvhlhjg%3D%3D)
 - Greenfield development of computer vision applications
 - Implementing AI research papers
 - Building, training, and deploying deep learning models
