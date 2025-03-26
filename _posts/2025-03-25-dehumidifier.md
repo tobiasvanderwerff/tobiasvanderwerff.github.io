@@ -80,7 +80,7 @@ Unfortunately, it's apparently not straightforward to control these capacitive t
 <img class="center" style="width:100%;" src="/assets/images/dehumidifier/circuit_diagram_leos_bag_of_tricks.svg">
 </figure>
 
-The basic idea is that the two 1N4148 diodes act as switches. When the mechanical switch is closed, the two diodes are forward biased and pass a tiny bit of current to the capacitive sensor, which triggers it. When the switch is open, the point between the two diodes has very high impedance, and no current can pass. I honestly still find this circuit somewhat confusing, but the [video](https://www.youtube.com/watch?v=lCHeQKXGfXw) shows it in more detail.
+The basic idea is that the two 1N4148 diodes act as switches. When the mechanical switch is closed, the two diodes are forward biased and pass a tiny bit of current to the capacitive sensor, which triggers it. When the switch is open, the point between the two diodes has very high impedance, and no current can pass. I honestly still find this circuit somewhat confusing, but the [video](https://www.youtube.com/watch?v=lCHeQKXGfXw) shows it in more detail.[^2]
 
  I put together a breadboard prototype and lo and behold, I was now able to successfully trigger the switch!
 
@@ -89,7 +89,7 @@ The basic idea is that the two 1N4148 diodes act as switches. When the mechanica
 <figcaption>Testing the circuit…</figcaption>
 </figure>
 
-I added a [2n3904 transistor](https://www.digikey.nl/en/articles/simply-put-2n3904-npn-transistor) to the circuit to act as an electronic switch rather than a mechanical one, with an added resistor at the base pin.[^2] I then put all the components on a perfboard and soldered them together. The result looks like this:
+I added a [2n3904 transistor](https://www.digikey.nl/en/articles/simply-put-2n3904-npn-transistor) to the circuit to act as an electronic switch rather than a mechanical one, with an added resistor at the base pin.[^3] I then put all the components on a perfboard and soldered them together. The result looks like this:
 
 <figure>
 <img class="center" style="width:75%;" src="/assets/images/dehumidifier/2025-03-21_08.45.05.webp">
@@ -105,7 +105,7 @@ The final circuit diagram looks like this:
 <img class="center" style="width:100%;" src="/assets/images/dehumidifier/circuit_diagram.svg">
 </figure>
 
-After some more testing to verify that things worked correctly, it was time to solder everything together. The perfboard needs to connect to the ESP32, and they both need to receive 5V power from the dehumidifier. Luckily for me, there was an unused port on the dehumidifier PCB which gave me a 5V power source.[^3]
+After some more testing to verify that things worked correctly, it was time to solder everything together. The perfboard needs to connect to the ESP32, and they both need to receive 5V power from the dehumidifier. Luckily for me, there was an unused port on the dehumidifier PCB which gave me a 5V power source.[^4]
 
 <figure>
 <img class="center" style="width:100%;" src="/assets/images/dehumidifier/2025-03-22_10.51.13.webp">
@@ -142,5 +142,6 @@ It can be pretty intimidating to modify a device like this because there's lots 
 <br>
 
 [^1]: Another option may have been to listen on the UART communication sent on the Rx and Tx pins to figure out what the microcontroller is doing.
-[^2]: I actually had to try out a bunch of different resistor values to find one that sufficiently saturated the transistor. I initially tried to calculate this resistor value using theory, but eventually came to the conclusion it was much more effective to simply use a multimeter to measure the results for different resistor values.
-[^3]: Fun fact: this port was labeled "WFI" (i.e. WiFi?). Perhaps the original design of the dehumidifier actually included WiFi control!
+[^2]: I actually had contact with [Leo](https://www.youtube.com/@leosbagoftricks3732), the author of the YouTube video, and apparently I used his circuit in a way that he didn't intend at all. This is because his circuit was designed to connect _capacitively_ to the circuit, not with a direct connection. But somehow, it still works! According to Leo, a better solution would be to put a small capacitor (20 picofarads or so) in series with the wire to the sensor, to block DC and prevent interference because of the direct connection to the dehumidifier PCB. Anyway, you should probably take my circuit design with a grain of salt, because I barely know what I'm doing.
+[^3]: I actually had to try out a bunch of different resistor values to find one that sufficiently saturated the transistor. I initially tried to calculate this resistor value using theory, but eventually came to the conclusion it was much more effective to simply measure the voltage drop across the transistor using a multimeter in order to find the best resistor value.
+[^4]: Fun fact: this port was labeled "WFI" (i.e. WiFi?). Perhaps the original design of the dehumidifier actually included WiFi control!
