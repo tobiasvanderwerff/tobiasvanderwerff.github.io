@@ -4,6 +4,10 @@ title: "I Hacked My Dehumidifier to Control it Over WiFi"
 tags: electronics hardware
 ---
 
+_See disccusion on [Reddit](https://www.reddit.com/r/esp32/comments/1jjg4mr/i_retrofitted_an_esp32_to_my_dehumidifier_to/)_.
+
+---<br>
+
 Many modern devices are connected to the internet -- thermostats, light bulbs, vacuum cleaners, you name it. It's certainly convenient to control your house's thermostat using your phone, or to have a robot vacuum your house. It's also easy to take this [too far](https://www.wired.com/story/strangest-internet-of-things-devices/), but it's still a fun gimmick to control your devices from an app on your smartphone.
 
 Something I've been wondering lately, is, how hard would it be to make your own smart devices? They typically [harvest lots of data about you](https://arstechnica.com/gadgets/2025/03/everything-you-say-to-your-echo-will-be-sent-to-amazon-starting-on-march-28/) which they subsequently transmit over the internet, which is less than ideal for privacy reasons. Instead, if you make your own smart device, you'd have full control over what the device can and can't do. This means you wouldn't have to install spyware on your phone or give out all your personal information just to turn on your CO2 monitor.
