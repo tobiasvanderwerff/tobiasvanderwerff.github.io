@@ -6,7 +6,7 @@ layout: page
 
 I'm Tobias van der Werff, an AI engineer based in The Netherlands. I work on various parts of the AI stack, from [research](https://github.com/pytorch/ao/pull/983) [paper](https://github.com/tobiasvanderwerff/full-page-handwriting-recognition) [implementations](https://github.com/tobiasvanderwerff/MetaHTR) to low-level [CUDA](https://github.com/pytorch/ao/pull/1147) [performance](https://github.com/pytorch/ao/pull/1092) [optimization](https://github.com/pytorch/ao/pull/942).
 
-You can find my blog [here](/blog/), where I write about topics such as [AI](https://tobiasvanderwerff.com/2024/05/15/cnn-vs-vit.html), [programming](https://tobiasvanderwerff.com/2024/08/01/lindy.html), and [weird hobbies](https://tobiasvanderwerff.com/2025/03/25/dehumidifier.html). I'd describe it as a weird mix of contemplative essays and technical tutorials, with a focus on [practical insights](/2024/06/17/useful-knowledge.html).
+You can find my blog [here](/blog/), where I write about topics such as [AI](https://tobiasvanderwerff.com/2024/05/15/cnn-vs-vit.html), [programming](https://tobiasvanderwerff.com/2024/08/01/lindy.html), and [strange hobbies](https://tobiasvanderwerff.com/2025/03/25/dehumidifier.html). I'd describe it as a weird mix of contemplative essays and technical tutorials, with a focus on [practical insights](/2024/06/17/useful-knowledge.html).
 
 You can also find me on [Github](https://github.com/tobiasvanderwerff), [X](https://www.x.com/tobiasnvdw), and [LinkedIn](https://www.linkedin.com/in/tobias-van-der-werff/).
 
